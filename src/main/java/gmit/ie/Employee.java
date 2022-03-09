@@ -3,11 +3,13 @@ package gmit.ie;
 public class Employee {
     private String title;
     private String name;
+    private String PPS;
 
-    public Employee(String title, String name)
+    public Employee(String title, String name, String pps)
     {
         setTitle(title);
         setName(name);
+        setPPS(pps);
     }
 
     public String getTitle() {
@@ -33,6 +35,19 @@ public class Employee {
         }
         else {
             throw new IllegalArgumentException("Invalid name entered");
+        }
+    }
+
+    public String getPPS() {
+        return PPS;
+    }
+
+    public void setPPS(String PPS) {
+        if(PPS.length() == 6) {
+            this.PPS = PPS;
+        }
+        else {
+            throw new IllegalArgumentException("Invalid PPS entered");
         }
     }
 }
