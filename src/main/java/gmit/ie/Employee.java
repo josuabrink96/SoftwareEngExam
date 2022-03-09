@@ -5,13 +5,16 @@ public class Employee {
     private String name;
     private String PPS;
     private String phone;
+    private String employmentType;
 
-    public Employee(String title, String name, String pps, String phone)
+    public Employee(String title, String name, String pps, String phone, String employmentType)
     {
         setTitle(title);
         setName(name);
         setPPS(pps);
         setPhone(phone);
+        setEmploymentType(employmentType);
+
     }
 
     public String getTitle() {
@@ -63,6 +66,19 @@ public class Employee {
         }
         else {
             throw new IllegalArgumentException("Invalid Phone Number entered");
+        }
+    }
+
+    public String getEmploymentType() {
+        return employmentType;
+    }
+
+    public void setEmploymentType(String employmentType) {
+        if(employmentType.equals("Full-time") || employmentType.equals("Part-time")) {
+            this.employmentType = employmentType;
+        }
+        else {
+            throw new IllegalArgumentException("Invalid Employment Type entered");
         }
     }
 }
