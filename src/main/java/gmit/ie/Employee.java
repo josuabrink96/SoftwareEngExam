@@ -2,10 +2,12 @@ package gmit.ie;
 
 public class Employee {
     private String title;
+    private String name;
 
-    public Employee(String title)
+    public Employee(String title, String name)
     {
         setTitle(title);
+        setName(name);
     }
 
     public String getTitle() {
@@ -18,6 +20,19 @@ public class Employee {
         }
         else {
             throw new IllegalArgumentException("Invalid title entered");
+        }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        if(name.length() >= 5 && name.length() <= 22) {
+            this.name = name;
+        }
+        else {
+            throw new IllegalArgumentException("Invalid name entered");
         }
     }
 }
