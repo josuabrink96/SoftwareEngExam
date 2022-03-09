@@ -4,12 +4,14 @@ public class Employee {
     private String title;
     private String name;
     private String PPS;
+    private String phone;
 
-    public Employee(String title, String name, String pps)
+    public Employee(String title, String name, String pps, String phone)
     {
         setTitle(title);
         setName(name);
         setPPS(pps);
+        setPhone(phone);
     }
 
     public String getTitle() {
@@ -48,6 +50,19 @@ public class Employee {
         }
         else {
             throw new IllegalArgumentException("Invalid PPS entered");
+        }
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        if(phone.length() == 7) {
+            this.phone = phone;
+        }
+        else {
+            throw new IllegalArgumentException("Invalid Phone Number entered");
         }
     }
 }
