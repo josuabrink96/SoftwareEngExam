@@ -35,4 +35,15 @@ public class EmployeeListTest {
         assertEquals(expectedMessage, ex.getMessage());
     }
 
+    @Test
+    void testInvalidEmployee()
+    {
+        String expectedMessage = "Unable to add null to list";
+
+       Exception ex = assertThrows(
+               IllegalArgumentException.class,
+               ()-> l.addEmployee(null)
+       );
+       assertEquals(ex.getMessage(), expectedMessage);
+    }
 }
