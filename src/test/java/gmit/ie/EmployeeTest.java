@@ -15,7 +15,7 @@ public class EmployeeTest {
     @Test
     void testInvalidTitle()
     {
-        String expectedMessage = "Invalid title entered";
+        String expectedMessage = "Title must be Mr, Mrs or Miss";
         Exception e = assertThrows(
                 IllegalArgumentException.class,
                 ()-> new Employee("Invalid", "Wilfred", "123456", "1234567", "Full-time", 20)
@@ -34,7 +34,7 @@ public class EmployeeTest {
     @Test
     void testInvalidName()
     {
-        String expectedMessage = "Invalid name entered";
+        String expectedMessage = "Name must be a minimum of 5 characters";
         Exception e = assertThrows(
                 IllegalArgumentException.class,
                 ()-> new Employee("Mr", "N/A", "123456", "1234567", "Full-time", 20)
@@ -53,7 +53,7 @@ public class EmployeeTest {
     @Test
     void testInvalidPPS()
     {
-        String expectedMessage = "Invalid PPS entered";
+        String expectedMessage = "PPS must be at least 6 characters long";
         Exception e = assertThrows(
                 IllegalArgumentException.class,
                 ()-> new Employee("Mr", "Wilfred", "0", "1234567", "Full-time", 20)
@@ -72,7 +72,7 @@ public class EmployeeTest {
     @Test
     void testInvalidPhone()
     {
-        String expectedMessage = "Invalid Phone Number entered";
+        String expectedMessage = "Phone Number must be at least 7 characters long";
         Exception e = assertThrows(
                 IllegalArgumentException.class,
                 ()-> new Employee("Mr", "Wilfred", "123456", "0", "Full-time", 20)
@@ -91,7 +91,7 @@ public class EmployeeTest {
     @Test
     void testInvalidEmploymentType()
     {
-        String expectedMessage = "Invalid Employment Type entered";
+        String expectedMessage = "Employment Type must be Full-time or Part-time";
         Exception e = assertThrows(
                 IllegalArgumentException.class,
                 ()-> new Employee("Mr", "Wilfred", "123456", "1234567", "N/A", 20)
@@ -110,7 +110,7 @@ public class EmployeeTest {
     @Test
     void testInvalidAge()
     {
-        String expectedMessage = "Invalid Age entered";
+        String expectedMessage = "Age must be over 18";
         Exception e = assertThrows(
                 IllegalArgumentException.class,
                 ()-> new Employee("Mr", "Wilfred", "123456", "1234567", "Full-time", 0)

@@ -27,7 +27,7 @@ public class Employee {
             this.title = title;
         }
         else {
-            throw new IllegalArgumentException("Invalid title entered");
+            throw new IllegalArgumentException("Title must be Mr, Mrs or Miss");
         }
     }
 
@@ -40,7 +40,7 @@ public class Employee {
             this.name = name;
         }
         else {
-            throw new IllegalArgumentException("Invalid name entered");
+            throw new IllegalArgumentException("Name must be a minimum of 5 characters");
         }
     }
 
@@ -53,7 +53,7 @@ public class Employee {
             this.PPS = PPS;
         }
         else {
-            throw new IllegalArgumentException("Invalid PPS entered");
+            throw new IllegalArgumentException("PPS must be at least 6 characters long");
         }
     }
 
@@ -66,7 +66,7 @@ public class Employee {
             this.phone = phone;
         }
         else {
-            throw new IllegalArgumentException("Invalid Phone Number entered");
+            throw new IllegalArgumentException("Phone Number must be at least 7 characters long");
         }
     }
 
@@ -78,7 +78,7 @@ public class Employee {
         if (employmentType.equals("Full-time") || employmentType.equals("Part-time")) {
             this.employmentType = employmentType;
         } else {
-            throw new IllegalArgumentException("Invalid Employment Type entered");
+            throw new IllegalArgumentException("Employment Type must be Full-time or Part-time");
         }
     }
 
@@ -91,7 +91,7 @@ public class Employee {
             this.age = age;
         }
         else {
-            throw new IllegalArgumentException("Invalid Age entered");
+            throw new IllegalArgumentException("Age must be over 18");
         }
     }
 }
