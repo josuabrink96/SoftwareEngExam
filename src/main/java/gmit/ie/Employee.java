@@ -6,15 +6,16 @@ public class Employee {
     private String PPS;
     private String phone;
     private String employmentType;
+    private int age;
 
-    public Employee(String title, String name, String pps, String phone, String employmentType)
+    public Employee(String title, String name, String pps, String phone, String employmentType, int age)
     {
         setTitle(title);
         setName(name);
         setPPS(pps);
         setPhone(phone);
         setEmploymentType(employmentType);
-
+        setAge(age);
     }
 
     public String getTitle() {
@@ -74,11 +75,23 @@ public class Employee {
     }
 
     public void setEmploymentType(String employmentType) {
-        if(employmentType.equals("Full-time") || employmentType.equals("Part-time")) {
+        if (employmentType.equals("Full-time") || employmentType.equals("Part-time")) {
             this.employmentType = employmentType;
+        } else {
+            throw new IllegalArgumentException("Invalid Employment Type entered");
+        }
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        if(age > 18) {
+            this.age = age;
         }
         else {
-            throw new IllegalArgumentException("Invalid Employment Type entered");
+            throw new IllegalArgumentException("Invalid Age entered");
         }
     }
 }

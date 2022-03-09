@@ -8,7 +8,7 @@ public class EmployeeTest {
     void testTitle()
     {
         String expectedTitle = "Mr";
-        Employee e = new Employee("Mr", "Wilfred", "123456", "1234567", "Full-time");
+        Employee e = new Employee("Mr", "Wilfred", "123456", "1234567", "Full-time", 20);
         assertEquals(expectedTitle, e.getTitle());
     }
 
@@ -18,7 +18,7 @@ public class EmployeeTest {
         String expectedMessage = "Invalid title entered";
         Exception e = assertThrows(
                 IllegalArgumentException.class,
-                ()-> new Employee("Invalid", "Wilfred", "123456", "1234567", "Full-time")
+                ()-> new Employee("Invalid", "Wilfred", "123456", "1234567", "Full-time", 20)
         );
         assertEquals(expectedMessage, e.getMessage());
     }
@@ -27,7 +27,7 @@ public class EmployeeTest {
     void testName()
     {
         String expectedName = "Wilfred";
-        Employee e = new Employee("Mr", "Wilfred", "123456", "1234567", "Full-time");
+        Employee e = new Employee("Mr", "Wilfred", "123456", "1234567", "Full-time", 20);
         assertEquals(expectedName, e.getName());
     }
 
@@ -37,7 +37,7 @@ public class EmployeeTest {
         String expectedMessage = "Invalid name entered";
         Exception e = assertThrows(
                 IllegalArgumentException.class,
-                ()-> new Employee("Mr", "N/A", "123456", "1234567", "Full-time")
+                ()-> new Employee("Mr", "N/A", "123456", "1234567", "Full-time", 20)
         );
         assertEquals(expectedMessage, e.getMessage());
     }
@@ -46,7 +46,7 @@ public class EmployeeTest {
     void testPPSNum()
     {
         String expectedPPS = "123456";
-        Employee e = new Employee("Mr", "Wilfred", "123456", "1234567", "Full-time");
+        Employee e = new Employee("Mr", "Wilfred", "123456", "1234567", "Full-time", 20);
         assertEquals(expectedPPS, e.getPPS());
     }
 
@@ -56,7 +56,7 @@ public class EmployeeTest {
         String expectedMessage = "Invalid PPS entered";
         Exception e = assertThrows(
                 IllegalArgumentException.class,
-                ()-> new Employee("Mr", "Wilfred", "0", "1234567", "Full-time")
+                ()-> new Employee("Mr", "Wilfred", "0", "1234567", "Full-time", 20)
         );
         assertEquals(expectedMessage, e.getMessage());
     }
@@ -65,7 +65,7 @@ public class EmployeeTest {
     void testPhoneNum()
     {
         String expectedPhone = "1234567";
-        Employee e = new Employee("Mr", "Wilfred", "123456", "1234567", "Full-time");
+        Employee e = new Employee("Mr", "Wilfred", "123456", "1234567", "Full-time", 20);
         assertEquals(expectedPhone, e.getPhone());
     }
 
@@ -75,7 +75,7 @@ public class EmployeeTest {
         String expectedMessage = "Invalid Phone Number entered";
         Exception e = assertThrows(
                 IllegalArgumentException.class,
-                ()-> new Employee("Mr", "Wilfred", "123456", "0", "Full-time")
+                ()-> new Employee("Mr", "Wilfred", "123456", "0", "Full-time", 20)
         );
         assertEquals(expectedMessage, e.getMessage());
     }
@@ -84,7 +84,7 @@ public class EmployeeTest {
     void testEmploymentType()
     {
         String expectedType = "Full-time";
-        Employee e = new Employee("Mr", "Wilfred", "123456", "1234567", "Full-time");
+        Employee e = new Employee("Mr", "Wilfred", "123456", "1234567", "Full-time", 20);
         assertEquals(expectedType, e.getEmploymentType());
     }
 
@@ -94,9 +94,29 @@ public class EmployeeTest {
         String expectedMessage = "Invalid Employment Type entered";
         Exception e = assertThrows(
                 IllegalArgumentException.class,
-                ()-> new Employee("Mr", "Wilfred", "123456", "1234567", "N/A")
+                ()-> new Employee("Mr", "Wilfred", "123456", "1234567", "N/A", 20)
         );
         assertEquals(expectedMessage, e.getMessage());
     }
+
+    @Test
+    void testAge()
+    {
+        int expectedAge = 20;
+        Employee e = new Employee("Mr", "Wilfred", "123456", "1234567", "Full-time", 20);
+        assertEquals(expectedAge, e.getAge());
+    }
+
+    @Test
+    void testInvalidAge()
+    {
+        String expectedMessage = "Invalid Age entered";
+        Exception e = assertThrows(
+                IllegalArgumentException.class,
+                ()-> new Employee("Mr", "Wilfred", "123456", "1234567", "Full-time", 0)
+        );
+        assertEquals(expectedMessage, e.getMessage());
+    }
+
 
 }
